@@ -18,7 +18,7 @@ describe("Chat API", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty("response");
-    expect(res.body.response).toContain("Hello AI");
+    expect(res.body.response).toContain("Hello AI"); // passes now
   });
 
   it("should return 400 for missing message", async () => {

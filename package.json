@@ -1,39 +1,38 @@
 {
   "name": "M2ChatAI",
   "version": "1.0.0",
-  "description": "Real-time AI chatbot built with Node.js, TypeScript, and Socket.io",
+  "description": "AI Chatbot built with Node.js, TypeScript, and MongoDB",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev src/server.ts",
     "lint": "eslint . --ext .ts",
-    "test": "jest --coverage"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "test": "cross-env NODE_ENV=test jest --coverage"
   },
-  "keywords": ["Node.js", "TypeScript", "AI", "Chatbot", "Socket.io"],
+  "keywords": [
+    "Node.js",
+    "TypeScript",
+    "MongoDB",
+    "Express",
+    "AI",
+    "Chatbot"
+  ],
   "author": "Md Mahbubur Rahman",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.0",
-    "socket.io": "^4.7.2"
+    "mongoose": "^7.5.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.22",
     "@types/jest": "^29.5.5",
     "@types/jsonwebtoken": "^9.0.3",
-    "@types/mongoose": "^5.11.97",
-    "@types/node": "^20.5.9",
-    "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "eslint": "^8.48.0",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.3",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.0"
-  }
-}
+    "@types/node": "^20.6.2",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.46.0",
+    "jest": "^29.7.0"

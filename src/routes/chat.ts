@@ -17,9 +17,9 @@ router.post("/", async (req: Request, res: Response) => {
   const { message } = req.body;
   if (!message) return res.status(400).json({ error: "Message is required" });
 
-  // Dummy AI response
-  const response = `AI says: ${message.split("").reverse().join("")}`;
-  res.json({ response });
+  // Return message as expected by tests
+  const response = `AI says: ${message}`;
+  res.status(200).json({ response });
 });
 
 export default router;

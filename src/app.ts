@@ -16,7 +16,10 @@ import chatRoutes from "./routes/chat";
 import { errorHandler } from "./middleware/errorHandler";
 
 dotenv.config();
-connectDB();
+
+if (process.env.NODE_ENV !== "test") {
+  connectDB(); // skip DB connection in Jest tests
+}
 
 const app = express();
 app.use(express.json());
