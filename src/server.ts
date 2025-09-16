@@ -9,21 +9,7 @@
  * GitHub  : https://github.com/m-a-h-b-u-b/M2ChatAI
  */
 
-import express from "express";
-import dotenv from "dotenv";
-import connectDB from "./config/db"; // updated path
-import chatRoutes from "./routes/chat";
-import { errorHandler } from "./middleware/errorHandler";
-
-dotenv.config();
-connectDB();
-
-const app = express();
-app.use(express.json());
-
-app.use("/api/chat", chatRoutes);
-
-app.use(errorHandler);
+import app from "./app";
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
