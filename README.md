@@ -90,6 +90,24 @@ M2ChatAI/
 └── tsconfig.json
 ```
 
+
 ## License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)  
+![Dual License](https://img.shields.io/badge/License-Dual%20License-green?style=flat-square) 
+
+This project is **dual-licensed**:
+
+- **Open-Source / Personal Use:** Apache 2.0  
+- **Commercial / Closed-Source Use:** Proprietary license required 
+
+For commercial licensing inquiries or enterprise use, please contact: [mahbub.aaman.app@gmail.com](mailto:mahbub.aaman.app@gmail.com)
+
+---
+
+## Author
+
+**Md Mahbubur Rahman**
+[GitHub](https://github.com/m-a-h-b-u-b) | [Website](https://m-a-h-b-u-b.github.io)
+
+---

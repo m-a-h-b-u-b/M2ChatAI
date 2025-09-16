@@ -1,5 +1,13 @@
 # M2ChatAI Architecture
 
+# M2ChatAI
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+
 ## Overview
 M2ChatAI is a real-time AI chatbot built with Node.js, TypeScript, and Socket.io. 
 It integrates with AI services (like OpenAI GPT) to provide intelligent responses 
