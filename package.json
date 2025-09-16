@@ -1,0 +1,29 @@
+{
+  "name": "M2ChatAI",
+  "version": "1.0.0",
+  "description": "Real-time AI chatbot built with Node.js, TypeScript, and Socket.io",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev src/server.ts",
+    "lint": "eslint . --ext .ts",
+    "test": "jest --coverage"
+  },
+  "keywords": ["Node.js", "TypeScript", "AI", "Chatbot", "Socket.io"],
+  "author": "Md Mahbubur Rahman",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.0",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.22",
+    "@types/jest": "^29.5.5",
+    "@types/jsonwebtoken": "^9.0.3",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.5.9",
+    "@types/supertest": "^2.0.12",
+    "@types
