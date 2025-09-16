@@ -9,55 +9,21 @@
  * GitHub  : https://github.com/m-a-h-b-u-b/M2ChatAI
  */
 
-import express from 'express';
-import http from 'http';
-import { Server as SocketIOServer } from 'socket.io';
-import dotenv from 'dotenv';
-import { connectDB } from './config/db';
-import chatRoutes from './routes/chat';
+import express from "express";
+import dotenv from "dotenv";
+import connectDB from "./db";
+import chatRoutes from "./routes/chat";
+import { errorHandler } from "./middleware/errorHandler";
 
-// Load environment variables
 dotenv.config();
+connectDB();
 
-// Initialize express app
 const app = express();
 app.use(express.json());
 
-// API routes
-app.use('/api/chat', chatRoutes);
+app.use("/api/chat", chatRoutes);
 
-// Create HTTP server and bind Socket.io
-const server = http.createServer(app);
-const io = new SocketIOServer(server, {
-  cors: {
-    origin: '*',
-    methods: ['GET', 'POST'],
-  },
-});
+app.use(errorHandler);
 
-// WebSocket events
-io.on('connection', (socket) => {
-  console.log(`User connected: ${socket.id}`);
-
-  socket.on('message', (msg) => {
-    console.log('Message received:', msg);
-    io.emit('message', msg);
-  });
-
-  socket.on('disconnect', () => {
-    console.log(`User disconnected: ${socket.id}`);
-  });
-});
-
-// Start server after DB connection
 const PORT = process.env.PORT || 5000;
-
-connectDB()
-  .then(() => {
-    server.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error('Failed to start server:', err);
-  });
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

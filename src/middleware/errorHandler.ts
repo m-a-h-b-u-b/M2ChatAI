@@ -9,17 +9,8 @@
  * GitHub  : https://github.com/m-a-h-b-u-b/M2ChatAI
  */
 
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
-/**
- * Global error handler middleware
- */
-export const errorHandler = (
-  err: Error,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  console.error('Global error handler:', err);
-  res.status(500).json({ error: err.message || 'Internal Server Error' });
+export const errorHandler = (err: Error, req: Request, res: Response, _next: NextFunction) => {
+  res.status(500).json({ message: err.message });
 };
