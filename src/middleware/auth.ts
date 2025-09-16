@@ -20,7 +20,7 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
 
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET || "secret");
 
-    // @ts-expect-error
+    // @ts-expect-error: User.findById may return null
     const user = await User.findById(decoded.userId);
     if (!user) return res.status(401).json({ message: "User not found" });
 

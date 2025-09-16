@@ -11,7 +11,7 @@
 
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./db";
+import connectDB from "./config/db"; // updated path
 import chatRoutes from "./routes/chat";
 import { errorHandler } from "./middleware/errorHandler";
 
