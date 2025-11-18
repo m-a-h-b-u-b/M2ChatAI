@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+  app:
+    build:
+      context: .
+      target: build
+    command: npm run dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/m2chat
+      - JWT_SECRET=devsecret
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:
